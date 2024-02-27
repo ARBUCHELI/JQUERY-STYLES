@@ -690,6 +690,62 @@ $(document).ready(() => {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* .removeClass()
+----------------
+Similar to .addClass(), the jQuery .removeClass() method can remove a class from selected elements.
+
+Its syntax is similar to .addClass():
+
+$('.example-class').removeClass('active');
+
+In the example above:
+
+	. .removeClass() is called on .example-class elements.
+
+	. The method removes the 'active' class from all .example-class elements.
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+Currently, the navigation menu is assigned a class called hide that sets its display to none.
+
+Use the .removeClass() method to show the navigation menu when a user’s mouse enters the menu button’s area.
+
+
+Hint
+Inside of the mouseenter event handler and under the .addClass() code you wrote in the last exercise, use .removeClass() to remove the hide class on the '.nav-menu' element.
+
+main.js
+-------
+$(document).ready(() => {
+ 
+  $('.login-button').on('click', () => {
+    $('.login-form').toggle();
+  });
+  
+  $('.menu-button').on('mouseenter', () => {
+    $('.nav-menu').show();
+    $('.menu-button').addClass('button-active').animate({
+      fontSize: '24px'
+    }, 200)
+    $('.nav-menu').removeClass('hide')
+  })
+  
+  $('.nav-menu').on('mouseleave', () => {
+    $('.nav-menu').hide();
+    $('.menu-button').css({
+      color: "#EFEFEF",
+      backgroundColor: "#303030"
+    }).animate({
+      fontSize: '18px'
+    }, 200)
+  })
+  
+}); 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 
 
